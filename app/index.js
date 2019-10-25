@@ -9,11 +9,13 @@ var Config   = require('./config');
 var Home     = require('./home');
 var Run      = require('./run');
 var Services = require('./services');
+var Create = require('./create');
 
 require('./styles');
 
 module.exports = Angular.module('postcard-create', [
   Account,
+  Create,
   Home,
   Recaptcha,
   Router,
