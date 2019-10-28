@@ -20,36 +20,36 @@ describe('create controller', function () {
     Postcard    = $injector.get('Postcard');
 
     $controller('CreateCtrl', {
-        $scope: $scope
-      });
-    
-      $scope.$apply();
+      $scope: $scope
+    });
+
+    $scope.$apply();
   }));
-  
+
   it('exposes the newly created postcard', function () {
     var payload = { front: 'front', back: 'back' };
     var postcard = { id: 'psc_id' };
-  
+
     Sinon.stub(Postcard, 'create').returns($q.resolve(postcard));
-  
+
     $scope.create(payload);
-  
+
     $scope.$apply();
-  
+
     expect($scope.postcard).to.eql(postcard);
     expect($scope.error).to.not.exist;
   });
-  
+
   it('exposes the error if an error is returned', function () {
     var payload = { front: 'front', back: 'back' };
     var message = 'banana phone';
-  
+
     Sinon.stub(Postcard, 'create').returns($q.reject(new Error(message)));
-  
+
     $scope.create(payload);
-  
+
     $scope.$apply();
-  
+
     expect($scope.error).to.eql(message);
     expect($scope.postcard).to.not.exist;
   });

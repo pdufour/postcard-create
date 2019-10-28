@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function ($scope, Postcard) {
 
   $scope.payload = { mail_type: 'usps_first_class' };

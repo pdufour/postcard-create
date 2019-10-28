@@ -2,7 +2,7 @@
 
 var expect  = require('chai').expect;
 var Angular = require('angular');
-const Sinon = require('sinon');
+var Sinon = require('sinon');
 
 
 var Config = require('../../config');
@@ -14,31 +14,31 @@ describe('postcard service', function () {
     let $rootScope
     let API;
     let Postcard;
-    
+
     beforeEach(Angular.mock.inject(function ($injector) {
         $q         = $injector.get('$q');
         $rootScope = $injector.get('$rootScope');
         API        = $injector.get('API');
         Postcard   = $injector.get('Postcard');
     }));
-    
+
     describe('create', function () {
-        
+
         it('calls the correct endpoint and with correct params', function () {
             var payload = { id: 'psc_id' };
 
             Sinon.stub(API, 'post').returns($q.resolve());
-          
+
             Postcard.create(payload);
-          
+
             $rootScope.$apply();
 
             expect(API.post.firstCall.args[0]).to.eql(Config.API_HOST + '/postcards');
             expect(API.post.firstCall.args[1]).to.eql(payload);
-          
+
             API.post.restore();
         });
-        
+
     });
-    
+
 });
