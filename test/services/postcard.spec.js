@@ -11,9 +11,9 @@ require('angular-mocks');
 
 describe('postcard service', function () {
     var $q;
-    let $rootScope
-    let API;
-    let Postcard;
+    var $rootScope
+    var API;
+    var Postcard;
 
     beforeEach(Angular.mock.inject(function ($injector) {
         $q         = $injector.get('$q');
