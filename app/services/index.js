@@ -1,12 +1,11 @@
 'use strict';
 
-var Angular = require('angular');
-var Cookies = require('angular-cookies');
-
-var API     = require('./api');
-var Auth    = require('./auth');
-var Session = require('./session');
+var Angular  = require('angular');
+var API      = require('./api');
+var Auth     = require('./auth');
+var Cookies  = require('angular-cookies');
 var Postcard = require('./postcard');
+var Session  = require('./session');
 
 module.exports = Angular.module('postcard-create.services', [
   Cookies

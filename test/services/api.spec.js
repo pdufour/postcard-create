@@ -1,7 +1,7 @@
 'use strict';
 
-var expect  = require('chai').expect;
 var Angular = require('angular');
+var expect  = require('chai').expect;
 var Sinon   = require('sinon');
 
 var TIMEOUT_MESSAGE = 'Request timed out. Please contact us at support@lob.com.';
