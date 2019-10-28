@@ -10,7 +10,7 @@ var Config = require('../../config');
 require('angular-mocks');
 
 describe('postcard service', function () {
-    let $q;
+    var $q;
     let $rootScope
     let API;
     let Postcard;
